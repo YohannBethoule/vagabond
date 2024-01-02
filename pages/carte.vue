@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { GoogleMap, Marker } from "vue3-google-map";
-import placesData from "@/assets/data/places.json";
-import {type PlaceDetails} from "@/types/Place";
+import { GoogleMap, CustomMarker } from "vue3-google-map";
 import {ref, type Ref} from "vue";
+import {type PlaceDetails} from "@/types/Place";
+import placesData from "@/assets/data/places.json";
+import MarkerIcon from "@/assets/icons/map_marker.svg";
 
 const mapRef: Ref<any> = ref(null)
 const placesService: Ref<any> = ref(null);
@@ -11,6 +12,10 @@ const places = ref<PlaceDetails[]>([]);
 const selectedPlace = ref<PlaceDetails|null>(null);
 
 const center = { lat: 45.82755635593049, lng: 1.2592093547306058 };
+
+
+const config = useRuntimeConfig();
+console.log(config)
 
 // Third pattern: watch for "ready" then do something with the API or map instance
 watch(() => mapRef.value?.ready, (ready) => {
@@ -62,29 +67,38 @@ const markers = computed(() => {
 
 <template>
     <GoogleMap
-        api-key=""
+        :api-key="config.public.googleApiKey"
         :libraries="['places']"
         class="map"
         :center="center"
         :zoom="6"
         ref="mapRef"
     >
-        <Marker
-            v-for="(marker) in markers"
-            :key="marker.id"
-            :options="marker"
-            @click="selectedPlace = places.find(p => p.id === marker.id)"
-        />
+        <CustomMarker v-for="(marker, index) in markers" :key="index" :options="marker"             @click="selectedPlace = places.find(p => p.id === marker.id)"
+        >
+            <MarkerIcon :filled="true" :class="{marker, isActive: true}" />
+        </CustomMarker>
         <section class="selected-place">
             <Place :place="selectedPlace" v-if="selectedPlace" />
         </section>
     </GoogleMap>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "@/assets/styles/variables.scss";
 .map{
     width: 100vw;
-    height: 100%;
+    height: calc(100% - $header-height);
+}
+
+.marker {
+    width: 30px;
+    height: 30px;
+    color: $yellow;
+
+    &.isActive {
+        color: $green;
+    }
 }
 
 .selected-place {

@@ -14,4 +14,9 @@ export default defineNuxtConfig({
   css: [
     'normalize.css/normalize.css'
   ],
+  runtimeConfig: {
+    public: {
+      googleApiKey: process.env.GOOGLE_API_KEY,
+    },
+  }
 })
