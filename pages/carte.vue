@@ -74,9 +74,9 @@ const markers = computed(() => {
         :zoom="6"
         ref="mapRef"
     >
-        <CustomMarker v-for="(marker, index) in markers" :key="index" :options="marker"             @click="selectedPlace = places.find(p => p.id === marker.id)"
+        <CustomMarker v-for="(marker, index) in markers" :key="index" :options="marker" @click="selectedPlace = places.find(p => p.id === marker.id)"
         >
-            <MarkerIcon :filled="true" :class="{marker, isActive: true}" />
+            <MarkerIcon :filled="true" :class="{marker, isActive: selectedPlace?.id === marker.id}" />
         </CustomMarker>
         <section class="selected-place">
             <Place :place="selectedPlace" v-if="selectedPlace" />

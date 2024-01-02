@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import {defineProps} from "vue";
+import {defineProps, VueElement} from "vue";
 
 const props = defineProps<{
-    headline: String
+    headline: VueElement
 }>()
 
 const expanded = ref(false)
@@ -10,9 +10,9 @@ const expanded = ref(false)
 
 <template>
     <div :class="[expanded ? 'expanded' : '', 'container']">
-        <div class="headline" @click="expanded = !expanded">{{ headline }}<span class="arrow"></span></div>
+        <div class="headline" @click="expanded = !expanded"><slot name="headline"></slot><span class="arrow"></span></div>
         <div class="collapsible">
-            <slot></slot>
+            <slot name="content"></slot>
         </div>
     </div>
 </template>

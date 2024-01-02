@@ -1,37 +1,40 @@
 <script setup lang="ts">
 import Logo from "assets/icons/logo_vagabond.svg";
-import ChevronIcon from "assets/icons/chevron.svg";
 import FacebookIcon from "assets/icons/facebook.svg";
 import InstagramIcon from "assets/icons/instagram.svg";
 import YoutubeIcon from "assets/icons/youtube.svg";
+import IconMap from '~/assets/icons/map2.svg'
+import IconStar from '~/assets/icons/star.svg'
 
 const props = defineProps<{
     isOpen: boolean,
     close: Function
 }>()
-
-const showSubmenu = ref(false)
-
 </script>
 
 <template>
     <Transition name="menu">
         <aside v-if="isOpen" class="menu">
-            <button class="close-btn" @click="close">X</button>
+            <a href="#" class="close" @click="close"></a>
             <nav>
                 <ul class="main">
                     <li>
-                        <a class="menu-item" @click="() => {showSubmenu = !showSubmenu}">Festival <ChevronIcon :class="['chevron', showSubmenu ? 'up' : 'down']"/></a>
-                        <Transition name="submenu">
-                            <ul v-if="showSubmenu" class="submenu">
-                                <li class="menu-item"><a href="/" @click="close">Lineup</a></li>
-                                <li class="menu-item"><a href="/" @click="close">Tickets</a></li>
-                                <li class="menu-item"><a href="/" @click="close">Gallery </a></li>
-                            </ul>
-                        </Transition>
+
+                        <Collapsible>
+                            <template #headline>
+                                <a href="/" @click="close"><IconStar class="link-icon" />Festival</a>
+                            </template>
+                            <template #content>
+                                <ul class="submenu">
+                                    <li class="menu-item"><a href="/" @click="close">Lineup</a></li>
+                                    <li class="menu-item"><a href="/" @click="close">Tickets</a></li>
+                                    <li class="menu-item"><a href="/" @click="close">Gallery </a></li>
+                                </ul>
+                            </template>
+                        </Collapsible>
                     </li>
                     <li>
-                        <a class="menu-item" href="/carte" @click="close">Vagabond Map</a>
+                        <a class="menu-item" href="/carte" @click="close"><IconMap class="link-icon"/>Vagabond Map</a>
                     </li>
                     <li>
                         <a class="menu-item" href="/" @click="close">Articles</a>
@@ -78,6 +81,12 @@ const showSubmenu = ref(false)
     left: 0;
     padding: 2rem;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    margin-top: 2rem;
 }
 
 .logo {
@@ -101,14 +110,37 @@ li {
     }
 }
 
-.close-btn {
+.link-icon {
+    margin-right: 20px;
+}
+
+.close {
     position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 2rem;
-    background: none;
-    border: none;
-    cursor: pointer;
+    right: 32px;
+    top: 32px;
+    width: 32px;
+    height: 32px;
+    border: 2px solid black;
+    border-radius: 100%;
+}
+.close:hover {
+    opacity: 0.6;
+}
+
+.close:before, .close:after {
+    position: absolute;
+    left: 15px;
+    top: 4px;
+    content: ' ';
+    height: 24px;
+    width: 2px;
+    background-color: black;
+}
+.close:before {
+    transform: rotate(45deg);
+}
+.close:after {
+    transform: rotate(-45deg);
 }
 
 .submenu {
@@ -123,9 +155,7 @@ li {
 }
 
 .menu-footer {
-    position: absolute;
-    bottom: 1rem;
-    left: 0;
+    margin-top: auto;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -160,31 +190,6 @@ li {
             }
         }
     }
-}
-
-.chevron {
-    transition: transform 1s ease;
-
-    &.up {
-        transform: rotate(180deg);
-    }
-
-    &.down {
-        transform: rotate(0deg);
-
-    }
-}
-
-.submenu-enter-active,
-.submenu-leave-active {
-    transition: all 0.5s ease;
-    max-height: fit-content;
-}
-
-.submenu-enter-from,
-.submenu-leave-to {
-    transition: all 0.5s ease;
-    max-height: 0;
 }
 
 .menu-enter-active,

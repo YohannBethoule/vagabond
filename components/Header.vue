@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    import IconMap from '~/assets/icons/map.svg'
+    import IconMap from '~/assets/icons/map2.svg'
     import IconBurger from '~/assets/icons/burger.svg'
     import Logo from '~/assets/icons/logo_vagabond.svg'
 
@@ -13,8 +13,10 @@
 <template>
     <header>
         <NuxtLink to="/"><Logo class="logo" /></NuxtLink>
-        <NuxtLink to="/carte"><IconMap class="map-icon" :filled="true"/></NuxtLink>
-        <button @click="toggleMenu(true)"><IconBurger :filled="true"/></button>
+        <div>
+            <NuxtLink to="/carte" class="map"><IconMap class="map-icon" :filled="true"/></NuxtLink>
+            <button @click="toggleMenu(true)"><IconBurger :filled="true"/></button>
+        </div>
     </header>
     <Menu :is-open="isMenuOpen" :close="() => toggleMenu(false)"/>
 </template>
@@ -28,6 +30,10 @@
         align-items: center;
         padding: 0 20px;
         height: $header-height;
+    }
+
+    .map {
+        margin-right: 20px;
     }
 
     svg {
