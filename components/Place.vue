@@ -18,8 +18,13 @@ console.log("props", props)
         <div class="right">
             <h2>{{ place.name }}</h2>
             <p>{{ place.address }}</p>
-            <Collapsible headline="Horaires">
-                <p v-for="day of place.openingHours" :key="day">{{ day }}</p>
+            <Collapsible>
+                <template #headline>
+                    Horaires
+                </template>
+                <template #content>
+                    <p v-for="day of place.openingHours" :key="day">{{ day }}</p>
+                </template>
             </Collapsible>
             <p v-for="service in place.services" :key="service">{{ service }}</p>
         </div>

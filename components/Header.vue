@@ -1,22 +1,39 @@
 <script setup lang="ts">
-    import IconMap from '~/assets/icons/map.svg'
+    import IconMap from '~/assets/icons/map2.svg'
+    import IconBurger from '~/assets/icons/burger.svg'
     import Logo from '~/assets/icons/logo_vagabond.svg'
+
+    const isMenuOpen = ref(false)
+
+    const toggleMenu = (value: boolean) => {
+        isMenuOpen.value = value
+    }
 </script>
 
 <template>
     <header>
         <NuxtLink to="/"><Logo class="logo" /></NuxtLink>
-        <NuxtLink to="/carte"><IconMap class="map-icon" :filled="true"/></NuxtLink>
+        <div>
+            <NuxtLink to="/carte" class="map"><IconMap class="map-icon" :filled="true"/></NuxtLink>
+            <button @click="toggleMenu(true)"><IconBurger :filled="true"/></button>
+        </div>
     </header>
+    <Menu :is-open="isMenuOpen" :close="() => toggleMenu(false)"/>
 </template>
 
 <style lang="scss" scoped>
+    @import '@/assets/styles/variables.scss';
     header {
         background-color: $orange;
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 0 20px;
+        height: $header-height;
+    }
+
+    .map {
+        margin-right: 20px;
     }
 
     svg {
@@ -33,12 +50,18 @@
         font-size: 4rem;
     }
 
-    .map-icon {
+    svg {
         width: 30px;
         height: 30px;
     }
 
     h1 {
         margin: 0;
+    }
+
+    button {
+        background: none;
+        border: none;
+        cursor: pointer;
     }
 </style>

@@ -16,7 +16,7 @@ const scrollToTop = () => {
 <template>
     <footer>
         <ArrowDown id="arrow-up" @click="scrollToTop"/>
-        <Logo id="logo" :filled="true"/>
+        <Logo class="logo" :filled="true"/>
         <section class="links">
             <a href="https://www.instagram.com/popillante_graphisme/" target="_blank" rel="noopener noreferrer">
                 <InstagramIcon />
@@ -44,7 +44,7 @@ footer {
     margin-bottom: 1rem;
 }
 
-#logo {
+.logo {
     width: 200px;
     height: 100px;
 }
