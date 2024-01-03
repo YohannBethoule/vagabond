@@ -18,5 +18,12 @@ export default defineNuxtConfig({
     public: {
       googleApiKey: process.env.GOOGLE_API_KEY,
     },
-  }
+  },
+  app: {
+    head: {
+      link: [
+        { rel: "icon", type: "image/png", href: "/favicon.png" }
+      ]
+    }
+  },
 })
