@@ -1,10 +1,31 @@
 <script setup lang="ts">
 import {defineProps} from 'vue'
 import {type PlaceDetails} from "@/types/Place";
+import WaterIcon from "@/assets/icons/services/water.svg";
+import ElectricityIcon from "@/assets/icons/services/electricity.svg";
+import WcIcon from "@/assets/icons/services/wc.svg";
+import ShowerIcon from "@/assets/icons/services/shower.svg";
+import WifiIcon from "@/assets/icons/services/wifi.svg";
+import DrinksIcon from "@/assets/icons/services/drink.svg";
+import FoodIcon from "@/assets/icons/services/food.svg";
+import SleepIcon from "@/assets/icons/services/sleep.svg";
+
 
 const props = defineProps<{
     place: PlaceDetails
 }>()
+
+// Map service names to icon components
+const iconMap = {
+    water: WaterIcon,
+    electricity: ElectricityIcon,
+    wc: WcIcon,
+    shower: ShowerIcon,
+    wifi: WifiIcon,
+    drinks: DrinksIcon,
+    food: FoodIcon,
+    sleep: SleepIcon,
+};
 
 console.log("props", props)
 </script>
@@ -26,7 +47,9 @@ console.log("props", props)
                     <p v-for="day of place.openingHours" :key="day">{{ day }}</p>
                 </template>
             </Collapsible>
-            <p v-for="service in place.services" :key="service">{{ service }}</p>
+            <div class="services">
+                <div v-for="service in place.services" :key="service" class="service"><component :is="iconMap[service]" class="service-icon" /></div>
+            </div>
         </div>
 
     </article>
@@ -61,5 +84,20 @@ p {
     align-items: center;
     position: relative;
     left: -15%;
+}
+
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.service-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.5rem;
+    background: $orange;
+    border-radius: 100%;
+    padding: .5rem;
 }
 </style>
