@@ -1,7 +1,25 @@
 [{
   "id": "ChIJH-7-havuBUgRkT9xnHKB0zY",
+  "name": "bubar",
   "services": ["water", "electricity"]
 },{
-  "id": "ChIJ20lC-eTrBUgRdFJtPvZwe_4",
+  "id": "ChIJ115OpqbuBUgRLcCTZ0JXGok",
+  "name": "o bocal",
+  "services": ["truc", "electricity", "wifi", "food"]
+},{
+  "id": "ChIJo4_76MTvBUgR3FnlGl4T33E",
+  "name": "poule noire",
+  "services": ["muche", "electricity", "wifi", "food"]
+},{
+  "id": "ChIJOebvNqTvBUgRqQoPw8RJC_M",
+  "name": "girouettes",
+  "services": ["electricity", "wifi", "food"]
+},{
+  "id": "ChIJh6R5I6XuBUgRQa2twZRlhuw",
+  "name": "live bar",
+  "services": ["boiudin", "electricity", "wifi", "food"]
+},{
+  "id": "ChIJr4YuZJfrBUgRD9HILpc6Xjw",
+  "name": "Le marché paysan de l'ile",
   "services": ["water", "electricity", "wifi", "food"]
 }]
