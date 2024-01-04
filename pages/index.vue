@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import Logo from '~/assets/icons/logo_vagabond.svg'
-import IconEllipse from '~/assets/icons/icon_ellipse.svg'
-import IconLosange from '~/assets/icons/icon_losange.svg'
-import IconTireBouchon from '~/assets/icons/icon_tirebouchon.svg'
-import IconZguigui from '~/assets/icons/icon_zguigui.svg'
+import IconEllipse from 'assets/icons/decoration/icon_ellipse.svg'
+import IconLosange from 'assets/icons/decoration/icon_losange.svg'
+import IconTireBouchon from 'assets/icons/decoration/icon_tirebouchon.svg'
+import IconZguigui from 'assets/icons/decoration/icon_zguigui.svg'
 </script>
 
 <template>
