@@ -18,13 +18,13 @@ const scrollToTop = () => {
         <ArrowDown id="arrow-up" @click="scrollToTop"/>
         <Logo class="logo" :filled="true"/>
         <section class="links">
-            <a href="https://www.instagram.com/popillante_graphisme/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/vagabond_fest?igsh=OGdlcGxrOGl0Nzhu" target="_blank" rel="noopener noreferrer">
                 <InstagramIcon />
             </a>
-            <a href="https://www.facebook.com/vagabondparis" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/vagabond_fest?igsh=OGdlcGxrOGl0Nzhu" target="_blank" rel="noopener noreferrer">
                 <FacebookIcon />
             </a>
-            <a href="https://www.behance.net/vagabondparis" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/vagabond_fest?igsh=OGdlcGxrOGl0Nzhu" target="_blank" rel="noopener noreferrer">
                 <YoutubeIcon />
             </a>
         </section>
