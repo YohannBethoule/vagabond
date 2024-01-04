@@ -27,7 +27,6 @@ const iconMap = {
     sleep: SleepIcon,
 };
 
-console.log("props", props)
 </script>
 
 <template>
@@ -41,7 +40,7 @@ console.log("props", props)
             <p>{{ place.address }}</p>
             <Collapsible>
                 <template #headline>
-                    Horaires
+                    Hours
                 </template>
                 <template #content>
                     <p v-for="day of place.openingHours" :key="day">{{ day }}</p>
@@ -59,7 +58,7 @@ console.log("props", props)
 article {
     background: $green;
     border-radius: 10px;
-    padding: 1rem;
+    padding: .7rem;
     margin-bottom: 1rem;
     color: white;
     width: 80vw;
@@ -75,7 +74,7 @@ h2 {
     margin-bottom: 0.5rem;
 }
 p {
-    margin-bottom: 0.5rem;
+    margin: 0 0 0.5rem;
 }
 
 .left {
@@ -83,7 +82,7 @@ p {
     justify-content: center;
     align-items: center;
     position: relative;
-    left: -15%;
+    left: -10%;
 }
 
 .services {
@@ -99,5 +98,20 @@ p {
     background: $orange;
     border-radius: 100%;
     padding: .5rem;
+    stroke-width: 5px;
+}
+
+@media (max-width: 600px) {
+    article {
+        flex-direction: column;
+    }
+    .left {
+        left: 0;
+        top: -20%
+    }
+
+    .right {
+        margin-top: -10%;
+    }
 }
 </style>
