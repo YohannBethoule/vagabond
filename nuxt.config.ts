@@ -2,13 +2,7 @@
 export default defineNuxtConfig({
     devtools: {enabled: true},
     modules: [
-        'nuxt-svgo',
-        ['@nuxtjs/google-fonts', {
-            families: {
-                'Cormorant Garamond': true,
-                download: false
-            }
-        }]
+        'nuxt-svgo'
     ],
     vite: {
         css: {
