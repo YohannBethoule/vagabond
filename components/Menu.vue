@@ -5,6 +5,10 @@ import InstagramIcon from "assets/icons/instagram.svg";
 import YoutubeIcon from "assets/icons/youtube.svg";
 import IconMap from '~/assets/icons/map2.svg'
 import IconStar from '~/assets/icons/star.svg'
+import IconArticle from '~/assets/icons/newspaper.svg'
+import IconUs from '~/assets/icons/us.svg'
+import IconFaq from '~/assets/icons/faq.svg'
+import IconJoinUs from '~/assets/icons/groups.svg'
 
 const props = defineProps<{
     isOpen: boolean,
@@ -37,16 +41,16 @@ const props = defineProps<{
                         <a class="menu-item" href="/carte" @click="close"><IconMap class="link-icon"/>Vagabond Map</a>
                     </li>
                     <li>
-                        <a class="menu-item" href="/" @click="close">Articles</a>
+                        <a class="menu-item" href="/" @click="close"><IconArticle class="link-icon"/>Articles</a>
                     </li>
                     <li>
-                        <a class="menu-item" href="/" @click="close">About</a>
+                        <a class="menu-item" href="/" @click="close"><IconUs class="link-icon"/>About</a>
                     </li>
                     <li>
-                        <a class="menu-item" href="/" @click="close">FAQ</a>
+                        <a class="menu-item" href="/" @click="close"><IconFaq class="link-icon"/>FAQ</a>
                     </li>
                     <li>
-                        <a class="menu-item" href="/" @click="close">Join us</a>
+                        <a class="menu-item" href="/" @click="close"><IconJoinUs class="link-icon"/>Join us</a>
                     </li>
                 </ul>
             </nav>
@@ -83,6 +87,7 @@ const props = defineProps<{
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    font-weight: 700;
 }
 
 .main {
@@ -122,9 +127,13 @@ li {
     height: 32px;
     border: 2px solid black;
     border-radius: 100%;
-}
-.close:hover {
-    opacity: 0.6;
+
+    &:hover {
+        border-width: 3px;
+        &:before, &:after {
+            width: 3px;
+        }
+    }
 }
 
 .close:before, .close:after {

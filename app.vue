@@ -14,6 +14,7 @@
         width: 100vw;
         max-width: 100vw;
         min-height: 100vh;
+        font-family: 'Cormorant Garamond', serif;
     }
 
     main {
