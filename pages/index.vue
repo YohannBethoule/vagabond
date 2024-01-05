@@ -51,6 +51,7 @@ import IconZguigui from 'assets/icons/decoration/icon_zguigui.svg'
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    font-family: 'Cormorant Garamond', serif;
 
     @media (min-width: 768px) {
         width: 50%;

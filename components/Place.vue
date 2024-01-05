@@ -58,12 +58,13 @@ const iconMap = {
 article {
     background: $green;
     border-radius: 10px;
-    padding: .7rem;
+    padding: 1rem;
     margin-bottom: 1rem;
     color: white;
     width: 80vw;
     max-width: 40rem;
     display: flex;
+    font-size: 1.5rem;
 }
 img {
     width: 10rem;
@@ -71,7 +72,7 @@ img {
     rotate: -5deg;
 }
 h2 {
-    margin-bottom: 0.5rem;
+    margin: 0 0 0.5rem;
 }
 p {
     margin: 0 0 0.5rem;

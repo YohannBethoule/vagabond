@@ -30,7 +30,7 @@ const scrollToTop = () => {
         </section>
         <p>
             Copyright © 2023 Vagabond.fr All rights reserved.<br/>
-            Designed by Louise Bruneau & developed by Yohann Betoule
+            Designed by Louise Bruneau & developed by Yohann Bethoule
         </p>
     </footer>
 </template>
@@ -60,6 +60,7 @@ footer {
     gap: 1rem;
     justify-content: center;
     align-items: center;
+    height: 4rem;
 
     a {
         width: 70px;
@@ -69,6 +70,9 @@ footer {
         display: flex;
         justify-content: center;
         align-items: center;
+        &:hover {
+            border-width: 2px;
+        }
 
         svg {
             color: black;
