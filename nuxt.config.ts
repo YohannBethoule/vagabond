@@ -6,8 +6,7 @@ export default defineNuxtConfig({
         ['@nuxtjs/google-fonts', {
             families: {
                 'Cormorant Garamond': true,
-                download: true,
-                inject: true
+                download: true
             }
         }]
     ],
