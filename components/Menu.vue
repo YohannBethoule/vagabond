@@ -140,9 +140,9 @@ li {
 .close:before, .close:after {
     position: absolute;
     left: 15px;
-    top: 4px;
+    top: 6px;
     content: ' ';
-    height: 24px;
+    height: 20px;
     width: 2px;
     background-color: black;
 }
