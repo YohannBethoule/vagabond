@@ -2,7 +2,14 @@
 export default defineNuxtConfig({
     devtools: {enabled: true},
     modules: [
-        'nuxt-svgo'
+        'nuxt-svgo',
+        ['@nuxtjs/google-fonts', {
+            families: {
+                'Cormorant Garamond': true,
+                download: true,
+                inject: true
+            }
+        }]
     ],
     vite: {
         css: {
@@ -16,6 +23,14 @@ export default defineNuxtConfig({
     css: [
         'normalize.css/normalize.css'
     ],
+    postcss: {
+        plugins: {
+            cssnano:
+                process.env.NODE_ENV === 'production'
+                    ? { preset: ['default', { discardComments: { removeAll: true } }] }
+                    : false, // disable cssnano when not in production
+        },
+    },
     runtimeConfig: {
         public: {
             googleApiKey: process.env.GOOGLE_API_KEY,
