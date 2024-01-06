@@ -23,6 +23,14 @@ export default defineNuxtConfig({
     css: [
         'normalize.css/normalize.css'
     ],
+    postcss: {
+        plugins: {
+            cssnano:
+                process.env.NODE_ENV === 'production'
+                    ? { preset: ['default', { discardComments: { removeAll: true } }] }
+                    : false, // disable cssnano when not in production
+        },
+    },
     runtimeConfig: {
         public: {
             googleApiKey: process.env.GOOGLE_API_KEY,
