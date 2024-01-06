@@ -38,7 +38,7 @@ const props = defineProps<{
                         </Collapsible>
                     </li>
                     <li>
-                        <a class="menu-item" href="/carte" @click="close"><IconMap class="link-icon"/>Vagabond Map</a>
+                        <a class="menu-item" href="/carte" @click="close"><IconMap class="link-icon" />Vagabond Map</a>
                     </li>
                     <li>
                         <a class="menu-item" href="/" @click="close"><IconArticle class="link-icon"/>Articles</a>
@@ -47,7 +47,7 @@ const props = defineProps<{
                         <a class="menu-item" href="/" @click="close"><IconUs class="link-icon"/>About</a>
                     </li>
                     <li>
-                        <a class="menu-item" href="/" @click="close"><IconFaq class="link-icon"/>FAQ</a>
+                        <a class="menu-item" href="/" @click="close"><IconFaq class="link-icon" :filled="true"/>FAQ</a>
                     </li>
                     <li>
                         <a class="menu-item" href="/" @click="close"><IconJoinUs class="link-icon"/>Join us</a>
@@ -117,6 +117,7 @@ li {
 
 .link-icon {
     margin-right: 20px;
+    color: $orange;
 }
 
 .close {
