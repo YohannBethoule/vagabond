@@ -87,7 +87,6 @@ const props = defineProps<{
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    font-weight: 700;
 }
 
 .main {
@@ -108,10 +107,12 @@ ul {
 
 li {
     font-size: 2.5rem;
-
     a {
         color: black;
         text-decoration: none;
+        &:hover {
+            font-weight: 600;
+        }
     }
 }
 
