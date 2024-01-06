@@ -14,8 +14,8 @@
     <header>
         <NuxtLink to="/"><Logo class="logo" /></NuxtLink>
         <div>
-            <NuxtLink to="/carte" class="map"><IconMap class="map-icon" :filled="true"/></NuxtLink>
-            <button @click="toggleMenu(true)"><IconBurger :filled="true"/></button>
+            <NuxtLink to="/carte" class="map"><IconMap class="map-icon" /></NuxtLink>
+            <a href="#" @click="toggleMenu(true)"><IconBurger /></a>
         </div>
     </header>
     <Menu :is-open="isMenuOpen" :close="() => toggleMenu(false)"/>
@@ -57,11 +57,5 @@
 
     h1 {
         margin: 0;
-    }
-
-    button {
-        background: none;
-        border: none;
-        cursor: pointer;
     }
 </style>

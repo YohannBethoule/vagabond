@@ -38,7 +38,7 @@ const props = defineProps<{
                         </Collapsible>
                     </li>
                     <li>
-                        <a class="menu-item" href="/carte" @click="close"><IconMap class="link-icon"/>Vagabond Map</a>
+                        <a class="menu-item" href="/carte" @click="close"><IconMap class="link-icon" />Vagabond Map</a>
                     </li>
                     <li>
                         <a class="menu-item" href="/" @click="close"><IconArticle class="link-icon"/>Articles</a>
@@ -47,7 +47,7 @@ const props = defineProps<{
                         <a class="menu-item" href="/" @click="close"><IconUs class="link-icon"/>About</a>
                     </li>
                     <li>
-                        <a class="menu-item" href="/" @click="close"><IconFaq class="link-icon"/>FAQ</a>
+                        <a class="menu-item" href="/" @click="close"><IconFaq class="link-icon" :filled="true"/>FAQ</a>
                     </li>
                     <li>
                         <a class="menu-item" href="/" @click="close"><IconJoinUs class="link-icon"/>Join us</a>
@@ -87,7 +87,6 @@ const props = defineProps<{
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    font-weight: 700;
 }
 
 .main {
@@ -108,15 +107,18 @@ ul {
 
 li {
     font-size: 2.5rem;
-
     a {
         color: black;
         text-decoration: none;
+        &:hover {
+            font-weight: 600;
+        }
     }
 }
 
 .link-icon {
     margin-right: 20px;
+    color: $orange;
 }
 
 .close {
@@ -139,9 +141,9 @@ li {
 .close:before, .close:after {
     position: absolute;
     left: 15px;
-    top: 4px;
+    top: 6px;
     content: ' ';
-    height: 24px;
+    height: 20px;
     width: 2px;
     background-color: black;
 }
