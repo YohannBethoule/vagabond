@@ -1,61 +1,73 @@
 <script setup lang="ts">
-    import IconMap from '~/assets/icons/map2.svg'
-    import IconBurger from '~/assets/icons/burger.svg'
-    import Logo from '~/assets/icons/logo_vagabond.svg'
+import IconMap from '~/assets/icons/map2.svg'
+import IconBurger from '~/assets/icons/burger.svg'
+import Logo from '~/assets/icons/logo_vagabond.svg'
 
-    const isMenuOpen = ref(false)
+const isMenuOpen = ref(false)
 
-    const toggleMenu = (value: boolean) => {
-        isMenuOpen.value = value
-    }
+const toggleMenu = (value: boolean) => {
+    isMenuOpen.value = value
+}
 </script>
 
 <template>
     <header>
-        <NuxtLink to="/"><Logo class="logo" /></NuxtLink>
+        <NuxtLink to="/">
+            <Logo class="logo"/>
+        </NuxtLink>
         <div>
-            <NuxtLink to="/carte" class="map"><IconMap class="map-icon" /></NuxtLink>
-            <a href="#" @click="toggleMenu(true)"><IconBurger /></a>
+            <NuxtLink to="/carte" class="map">
+                <IconMap class="map-icon"/>
+            </NuxtLink>
+            <a href="#" @click="toggleMenu(true)" class="menu-link">
+                <IconBurger/>
+            </a>
         </div>
     </header>
     <Menu :is-open="isMenuOpen" :close="() => toggleMenu(false)"/>
 </template>
 
 <style lang="scss" scoped>
-    @import '@/assets/styles/variables.scss';
-    header {
-        background-color: $orange;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 20px;
-        height: $header-height;
-    }
+@import '@/assets/styles/variables.scss';
 
-    .map {
-        margin-right: 20px;
-    }
+header {
+    background-color: $orange;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: $header-height;
+    box-shadow: 0 2px 3px 0 gray;
+}
 
-    svg {
-        margin: 0;
-        color: $white;
+.map {
+    margin-right: 20px;
+}
 
-        &:hover {
-            color: black;
-        }
-    }
+svg {
+    margin: 0;
+    color: $white;
 
-    .logo {
-        width: 120px;
-        font-size: 4rem;
+    &:hover {
+        color: black;
     }
+}
 
-    svg {
-        width: 30px;
-        height: 30px;
-    }
+.menu-link svg {
+    height: 1.4rem;
+}
 
-    h1 {
-        margin: 0;
-    }
+.logo {
+    width: 120px;
+    font-size: 4rem;
+}
+
+svg {
+    width: 30px;
+    height: 30px;
+}
+
+h1 {
+    margin: 0;
+}
 </style>

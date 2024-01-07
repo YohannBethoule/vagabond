@@ -12,7 +12,8 @@ import SleepIcon from "@/assets/icons/services/sleep.svg";
 
 
 const props = defineProps<{
-    place: PlaceDetails
+    place: PlaceDetails,
+    close: () => void
 }>()
 
 // Map service names to icon components
@@ -33,10 +34,12 @@ const iconMap = {
     <article>
         <div class="left">
             <img v-if="place.photos && place.photos.length > 0" :src="place.photos[0]" :alt="place.name"/>
-
         </div>
         <div class="right">
-            <h2>{{ place.name }}</h2>
+            <div class="top">
+                <h2>{{ place.name }}</h2>
+                <a href="#" @click="close" class="close">x</a>
+            </div>
             <p>{{ place.address }}</p>
             <Collapsible>
                 <template #headline>
@@ -56,6 +59,7 @@ const iconMap = {
 
 <style scoped lang="scss">
 article {
+    position: relative;
     background: $green;
     border-radius: 10px;
     padding: 1rem;
@@ -65,6 +69,12 @@ article {
     max-width: 40rem;
     display: flex;
     font-size: 1.5rem;
+}
+.close {
+    margin-left: auto;
+    font-size: 2rem;
+    color: white;
+    text-decoration: none;
 }
 img {
     width: 10rem;
@@ -77,7 +87,15 @@ h2 {
 p {
     margin: 0 0 0.5rem;
 }
-
+.close {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    z-index: 10;
+    &:hover {
+        text-decoration: underline;
+    }
+}
 .left {
     display: flex;
     justify-content: center;
