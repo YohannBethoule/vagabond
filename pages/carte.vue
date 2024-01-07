@@ -75,7 +75,7 @@ const markers = computed(() => {
             <MarkerIcon :filled="true" :class="{marker, isActive: selectedPlace?.id === marker.id}" />
         </CustomMarker>
         <section class="selected-place">
-            <Place :place="selectedPlace" v-if="selectedPlace" />
+            <Place :place="selectedPlace" v-if="selectedPlace" :close="() => {selectedPlace = null}"/>
         </section>
     </GoogleMap>
 </template>
