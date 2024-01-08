@@ -86,8 +86,8 @@ onUnmounted(() => {
     position: fixed;
     top: 0;
     left: 0;
-    height: 100vh;
-    width: 100vw;
+    height: 100dvh;
+    width: 100dvw;
     background: $lightblue;
     z-index: 20;
 }

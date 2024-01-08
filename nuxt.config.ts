@@ -5,10 +5,10 @@ export default defineNuxtConfig({
         'nuxt-svgo',
         ['@nuxtjs/google-fonts', {
             families: {
-                'Cormorant Garamond': {wght: '300..700', ital: '300..700'},
-                download: true,
-                inject: true
-            }
+                'Cormorant Garamond': [300, 400, 500, 600, 700],
+            },
+            download: true,
+            inject: true,
         }]
     ],
     vite: {
