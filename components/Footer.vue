@@ -29,7 +29,7 @@ const scrollToTop = () => {
             </a>
         </section>
         <p>
-            Copyright © 2023 Vagabond.fr All rights reserved.<br/>
+            Copyright © 2023 vagabond-fest.com All rights reserved.<br/>
             Designed by Louise Bruneau & developed by Yohann Bethoule
         </p>
     </footer>

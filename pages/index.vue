@@ -8,39 +8,69 @@ import IconZguigui from 'assets/icons/decoration/icon_zguigui.svg'
 
 <template>
     <div id="home">
-        <div id="row1">
-            <img id="img1" src="~/assets/images/home/img1.webp" alt="Backpacker family" />
-            <IconEllipse class="icon" :filled="true" />
-            <div class="orange italic subtitle">
+<!--        ROW 1-->
+        <div class="grid-row row-shrink-right">
+            <div class="one">
+                <img id="img1" src="~/assets/images/home/img1.webp" alt="Backpacker family"/>
+                <IconEllipse class="icon" :filled="true"/>
+            </div>
+            <div class="two orange italic subtitle">
                 <p class="">Walk</p>
                 <p class="bold">Ride</p>
                 <p class="bolder">Slide</p>
             </div>
         </div>
-        <div id="row2">
-            <p class="orange italic subtitle">
-                <Logo class="logo" :filled="true" /> journey accessible <span class="black">to all :</span> coming together, sharing, and traveling gently
-            </p>
-            <img id="img2" src="~/assets/images/home/img2.webp" alt="Couple riding bikes" />
-            <IconZguigui class="icon" :filled="true" />
+
+<!--        ROW 2-->
+        <div class="grid-row row-shrink-left">
+            <div class="three">
+                <p class="orange italic subtitle">
+                    <Logo class="logo" :filled="true"/>
+                    journey accessible <span class="black">to all :</span> coming together, sharing, and traveling gently
+                </p>
+            </div>
+            <div class="four">
+                <img id="img2" src="~/assets/images/home/img2.webp" alt="Couple riding bikes"/>
+                <IconZguigui class="icon" :filled="true"/>
+            </div>
         </div>
-        <div id="row3">
-            <img id="img3" src="~/assets/images/home/img3.webp" alt="Rollerblading" />
-            <IconLosange class="icon" :filled="true" />
+
+<!--ROW 3-->
+        <div class="grid-row row-shrink-right">
+            <div class="five">
+                <img id="img3" src="~/assets/images/home/img3.webp" alt="Rollerblading"/>
+                <IconLosange class="icon" :filled="true"/>
+            </div>
+            <div class="six">
+                <p class="italic">Sparkling, Dynamic, and Mobile !</p>
+            </div>
         </div>
-        <div id="row4">
-            <p class="italic">Sparkling, Dynamic, and Mobile !</p>
-        </div>
-        <div id="row5">
-            <p>An invitation to <span class="italic bolder">distance oneself</span></p>
-            <p id="from-phones" class="orange italic bolder">from phones</p>
-            <img id="img4" src="~/assets/images/home/img4.webp" alt="Road sign" />
-            <img id="img5" src="~/assets/images/home/img5.webp" alt="Walking stick and backpack" />
-            <img id="img6" src="~/assets/images/home/img6.webp" alt="Bike in forest" />
-            <IconZguigui class="icon zguigui" :filled="true" />
-            <IconEllipse class="icon ellipse" :filled="true" />
+        <div class="another-grid">
+            <div class="seven">
+                <p>An invitation to <span class="italic bolder">distance oneself</span></p>
+                <p id="from-phones" class="orange italic bolder">from phones</p>
+            </div>
+            <img id="img4" src="~/assets/images/home/img4.webp" alt="Road sign"/>
+            <img id="img5" src="~/assets/images/home/img5.webp" alt="Walking stick and backpack"/>
+            <img id="img6" src="~/assets/images/home/img6.webp" alt="Bike in forest"/>
+            <p></p>
             <p class="bottom-text italic">and to meet <span class="bolder">new people,</span></p>
+            <IconZguigui class="icon zguigui" :filled="true"/>
+            <IconEllipse class="icon ellipse" :filled="true"/>
         </div>
+        <div class="grid-row row-shrink-right">
+            <img id="img7" src="~/assets/images/home/img7.webp" alt="Tea with sweet note"/>
+            <img id="img8" src="~/assets/images/home/img8.webp" alt="Bike with family"/>
+        </div>
+        <div class="p-traveler-network">
+            <p>thus creating</p>
+            <p class="orange italic bolder">a network of travelers</p>
+        </div>
+        <div class="grid-row row-shrink-right">
+            <img id="img9" src="~/assets/images/home/img9.webp" alt="Breakfast in nature"/>
+            <img id="img10" src="~/assets/images/home/img10.webp" alt="Breakfast in nature"/>
+        </div>
+        <img id="img11" src="~/assets/images/home/img11.webp" alt="Hking with friends"/>
     </div>
 
 </template>
@@ -50,13 +80,32 @@ import IconZguigui from 'assets/icons/decoration/icon_zguigui.svg'
     height: 100%;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
-    font-family: 'Cormorant Garamond', serif;
+    gap: 20px;
+    font-size: clamp(1.5rem, 2.5vw, 7rem);
+    margin: clamp(0rem, 2vw, 5rem);
+    overflow-x: hidden;
 
-    @media (min-width: 768px) {
-        width: 50%;
-        place-items: center;
+    @media screen and (max-width: 600px) {
+        margin: 0;
+        padding: 5vw;
     }
+}
+
+.grid-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    align-items: center;
+}
+
+.row-shrink-right {
+    grid-template-columns: 1fr minmax(150px, 1fr);
+    /* This makes the right column in this row shrinkable */
+}
+
+.row-shrink-left {
+    grid-template-columns: minmax(150px, 1fr) 1fr;
+    /* This makes the left column in this row shrinkable */
 }
 
 .black {
@@ -82,162 +131,121 @@ import IconZguigui from 'assets/icons/decoration/icon_zguigui.svg'
 .icon {
     width: 80px;
     height: 80px;
-    position: absolute;
     z-index: 10;
+    position: absolute;
 }
 
 img {
     opacity: 0.7;
+    width: clamp(250px, 40vw, 900px);
+    min-width: 250px;
+    aspect-ratio: auto 1/1;
 }
 
-#row1 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
+.one {
     #img1 {
-        position: relative;
-        left: -20px;
-        rotate: -80deg;
-        height: 200px;
+        rotate: -10deg;
+        margin-top: 10vh;
+        margin-left: calc(-150px + 20vw);
     }
 
-    .subtitle {
-        position: relative;
-        left: -50px;
-        font-size: 3rem;
+    .icon {
+        top: -5%;
+    }
+}
+
+.two {
+    font-size: clamp(3rem, 5vw, 5rem);
+    text-align: center;
+}
+
+.three {
+    .logo {
+        font-size: clamp(5rem, 7vw, 15rem);
+        height: auto;
         margin: 0;
-
-        p {
-            margin: 1rem;
-        }
     }
+}
 
+.four {
     .icon {
-        left: 70px;
-        top: 270px
-    }
-}
-
-#row2 {
-    position: relative;
-    top: 5%;
-
-    #img2 {
-        position: relative;
-        left: 50%;
-        top: -50%;
-        rotate: 5deg;
-        height: 150px;
-    }
-
-    .subtitle {
-        width: 40%;
-        font-size: 1.4rem;
-        margin-left: 20px;
-
-        .logo {
-            font-size: 5rem;
-            height: auto;
-            margin: 0;
-        }
-    }
-
-    .icon {
-        left: 60%;
-        top: 35%;
-    }
-}
-
-#row3 {
-    position: relative;
-    top: -2%;
-
-    #img3 {
-        position: relative;
-        left: 0;
-        top: -10px;
-        rotate: -5deg;
-        height: 180px;
-    }
-
-    .icon {
-        left: 250px;
-        top: 140px;
-    }
-}
-
-#row4 {
-    position: relative;
-    top: -2%;
-
-    p {
-        font-size: 1.3rem;
-        margin-right: 5%;
-        text-align: right;
-    }
-}
-
-#row5 {
-    position: relative;
-    top: 0;
-
-    p {
-        font-size: 1.6rem;
-        margin: 0 0 0 5%;
-        width: 40%;
-    }
-
-    .bottom-text {
-        font-size: 1.3rem;
-        margin: 0 0 0 5%;
-        width: 40%;
-        position: relative;
-        top: 290px;
-    }
-
-    #from-phones {
-        font-size: 2rem;
-        margin: 0 0 0 10%;
-    }
-
-    #img4 {
-        position: absolute;
-        left: 60%;
         top: 0;
-        rotate: 5deg;
-        height: 200px;
+        left: 0;
     }
+}
 
-    #img5 {
-        position: absolute;
-        left: -10px;
-        top: 200px;
-        rotate: -7deg;
-        height: 200px;
-    }
+.another-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    align-items: center;
+    position: relative;
+}
 
-    #img6 {
-        position: absolute;
-        left: 45%;
-        top: 250px;
-        rotate: -5deg;
-        height: 200px;
+.seven {
+    width: fit-content;
+    #from-phones {
+        text-align: right;
+        margin-right: -5vw;
     }
+}
 
-    .zguigui {
-        left: 50%;
-        top: 80%;
+.p-traveler-network {
+    text-align: center;
+    margin-left: -30vw;
+    .orange {
+        margin-left: 40vw;
     }
+}
 
-    .ellipse {
-        left: 100px;
-        top: 350px;
-    }
+
+#img2 {
+    rotate: 5deg;
+}
+
+#img3 {
+    rotate: -5deg;
+}
+
+#img4 {
+    rotate: 5deg;
+    margin-left: clamp(2rem, 8vw, 0rem);
+}
+
+#img5 {
+    rotate: -7deg;
+    margin-left: calc(-200px + 20vw);
+    margin-right: 5vw;
+}
+
+#img6 {
+    rotate: -5deg;
 }
 
 #img7 {
-    rotate: -80deg;
-    height: 200px;
+    rotate: 8deg;
+    margin-left: calc(-150px + 10vw);
+    margin-right: 10vw;
 }
+#img8 {
+    rotate: -5deg;
+}
+
+#img9 {
+    rotate: 5deg;
+    margin-left: calc(-100px + 10vw);
+    margin-right: 10vw;
+}
+
+#img10 {
+    rotate: 15deg;
+    margin-top: 50px;
+}
+
+#img11 {
+    rotate: -10deg;
+    width: 90vw;
+    margin-top: 100px;
+}
+
 </style>
