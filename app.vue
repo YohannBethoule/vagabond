@@ -1,5 +1,5 @@
 <template>
-    <HomeScroller></HomeScroller>
+    <HomeScroller v-if="isFirstNavigation"></HomeScroller>
     <Header />
     <main>
         <NuxtPage/>
@@ -26,4 +26,15 @@
 </style>
 <script setup lang="ts">
 import Footer from "~/components/Footer.vue";
+
+// Reactive variable to track if it's the first navigation
+const isFirstNavigation = ref(true);
+
+const route = useRoute();
+
+watch(route, (newRoute, oldRoute) => {
+    if (oldRoute && newRoute.path !== oldRoute.path) {
+        isFirstNavigation.value = false;
+    }
+}, { immediate: true });
 </script>

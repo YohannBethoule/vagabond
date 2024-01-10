@@ -26,7 +26,7 @@ const animateBubbles = () => {
 }
 
 const handleScroll = (event: WheelEvent | TouchEvent) => {
-  if (show.value && !isAnimatingOut.value) {
+  if (show.value || isAnimatingOut.value) {
     event.preventDefault();
     isAnimatingOut.value = true;
     show.value = false;

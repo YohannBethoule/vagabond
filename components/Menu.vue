@@ -1,8 +1,5 @@
 <script setup lang="ts">
 import Logo from "assets/icons/logo_vagabond.svg";
-import FacebookIcon from "assets/icons/facebook.svg";
-import InstagramIcon from "assets/icons/instagram.svg";
-import YoutubeIcon from "assets/icons/youtube.svg";
 import IconMap from '~/assets/icons/map2.svg'
 import IconStar from '~/assets/icons/star.svg'
 import IconArticle from '~/assets/icons/newspaper.svg'
@@ -26,38 +23,61 @@ const props = defineProps<{
 
                         <Collapsible>
                             <template #headline>
-                                <a href="/" @click="close"><IconStar class="link-icon" />Festival</a>
+                                <a href="#" @click="close">
+                                    <IconStar class="link-icon"/>
+                                    Festival</a>
                             </template>
                             <template #content>
                                 <ul class="submenu">
-                                    <li class="menu-item"><a href="/" @click="close">Lineup</a></li>
-                                    <li class="menu-item"><a href="/" @click="close">Tickets</a></li>
-                                    <li class="menu-item"><a href="/" @click="close">Gallery </a></li>
+                                    <li class="menu-item">
+                                        <NuxtLink to="/" @click="close">Lineup</NuxtLink>
+                                    </li>
+                                    <li class="menu-item">
+                                        <NuxtLink to="/" @click="close">Tickets</NuxtLink>
+                                    </li>
+                                    <li class="menu-item">
+                                        <NuxtLink to="/" @click="close">Gallery</NuxtLink>
+                                    </li>
                                 </ul>
                             </template>
                         </Collapsible>
                     </li>
                     <li>
-                        <a class="menu-item" href="/carte" @click="close"><IconMap class="link-icon" />Vagabond Map</a>
+                        <NuxtLink class="menu-item" to="/carte" @click="close">
+                            <IconMap class="link-icon"/>
+                            Vagabond Map
+                        </NuxtLink>
                     </li>
                     <li>
-                        <a class="menu-item" href="/" @click="close"><IconArticle class="link-icon"/>Articles</a>
+                        <NuxtLink class="menu-item" to="/" @click="close">
+                            <IconArticle class="link-icon"/>
+                            Articles
+                        </NuxtLink>
                     </li>
                     <li>
-                        <a class="menu-item" href="/" @click="close"><IconUs class="link-icon"/>About</a>
+                        <NuxtLink class="menu-item" to="/" @click="close">
+                            <IconUs class="link-icon"/>
+                            About
+                        </NuxtLink>
                     </li>
                     <li>
-                        <a class="menu-item" href="/" @click="close"><IconFaq class="link-icon" :filled="true"/>FAQ</a>
+                        <NuxtLink class="menu-item" to="/" @click="close">
+                            <IconFaq class="link-icon" :filled="true"/>
+                            FAQ
+                        </NuxtLink>
                     </li>
                     <li>
-                        <a class="menu-item" href="/" @click="close"><IconJoinUs class="link-icon"/>Join us</a>
+                        <NuxtLink class="menu-item" to="/" @click="close">
+                            <IconJoinUs class="link-icon"/>
+                            Join us
+                        </NuxtLink>
                     </li>
                 </ul>
             </nav>
 
             <div class="menu-footer">
                 <Logo class="logo" :filled="true"/>
-                <Socials />
+                <Socials/>
             </div>
 
         </aside>
@@ -97,9 +117,11 @@ ul {
 
 li {
     font-size: 2.5rem;
+
     a {
         color: black;
         text-decoration: none;
+
         &:hover {
             font-weight: 600;
         }
@@ -122,6 +144,7 @@ li {
 
     &:hover {
         border-width: 3px;
+
         &:before, &:after {
             width: 3px;
         }
@@ -137,9 +160,11 @@ li {
     width: 2px;
     background-color: black;
 }
+
 .close:before {
     transform: rotate(45deg);
 }
+
 .close:after {
     transform: rotate(-45deg);
 }
