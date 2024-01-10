@@ -2,7 +2,6 @@
 import Logo from '~/assets/icons/logo_vagabond.svg'
 import IconEllipse from 'assets/icons/decoration/icon_ellipse.svg'
 import IconLosange from 'assets/icons/decoration/icon_losange.svg'
-import IconTireBouchon from 'assets/icons/decoration/icon_tirebouchon.svg'
 import IconZguigui from 'assets/icons/decoration/icon_zguigui.svg'
 </script>
 
@@ -36,7 +35,7 @@ import IconZguigui from 'assets/icons/decoration/icon_zguigui.svg'
         </div>
 
 <!--ROW 3-->
-        <div class="grid-row row-shrink-right">
+        <div class="grid-row row-shrink-left">
             <div class="five">
                 <img id="img3" src="~/assets/images/home/img3.webp" alt="Rollerblading"/>
                 <IconLosange class="icon" :filled="true"/>
@@ -53,31 +52,37 @@ import IconZguigui from 'assets/icons/decoration/icon_zguigui.svg'
             <img id="img4" src="~/assets/images/home/img4.webp" alt="Road sign"/>
             <img id="img5" src="~/assets/images/home/img5.webp" alt="Walking stick and backpack"/>
             <img id="img6" src="~/assets/images/home/img6.webp" alt="Bike in forest"/>
-            <p></p>
-            <p class="bottom-text italic">and to meet <span class="bolder">new people,</span></p>
+
             <IconZguigui class="icon zguigui" :filled="true"/>
             <IconEllipse class="icon ellipse" :filled="true"/>
         </div>
-        <div class="grid-row row-shrink-right">
+        <div class="grid-row row-shrink-left eight">
+            <p></p>
+            <p class="bottom-text italic">and to meet <span class="bolder">new people,</span></p>
+        </div>
+
+        <div class="grid-row row-shrink-right eight">
             <img id="img7" src="~/assets/images/home/img7.webp" alt="Tea with sweet note"/>
             <img id="img8" src="~/assets/images/home/img8.webp" alt="Bike with family"/>
+            <IconZguigui class="icon" :filled="true"/>
         </div>
         <div class="p-traveler-network">
             <p>thus creating</p>
             <p class="orange italic bolder">a network of travelers</p>
         </div>
-        <div class="grid-row row-shrink-right">
-            <img id="img9" src="~/assets/images/home/img9.webp" alt="Breakfast in nature"/>
+        <div class="grid-row row-shrink-right nine">
+            <img id="img9" src="~/assets/images/home/img9.webp" alt="Kayaking"/>
             <img id="img10" src="~/assets/images/home/img10.webp" alt="Breakfast in nature"/>
+            <IconLosange class="icon" :filled="true"/>
         </div>
-        <img id="img11" src="~/assets/images/home/img11.webp" alt="Hking with friends"/>
+        <img id="img11" src="~/assets/images/home/img11.webp" alt="Hiking with friends"/>
     </div>
 
 </template>
 
 <style lang="scss" scoped>
 #home {
-    height: 100%;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -150,13 +155,19 @@ img {
     }
 
     .icon {
-        top: -5%;
+        top: calc(150px + 25vw);
+        left:40vw;
     }
 }
 
 .two {
     font-size: clamp(3rem, 5vw, 5rem);
     text-align: center;
+    margin-top: 50px;
+
+    p {
+        margin: 5% 0;
+    }
 }
 
 .three {
@@ -169,8 +180,16 @@ img {
 
 .four {
     .icon {
-        top: 0;
+        top: calc(400px + 35vw);
+        left: 80vw;
+    }
+}
+
+.five {
+    .icon {
+        position: relative;
         left: 0;
+        top: -200px;
     }
 }
 
@@ -180,6 +199,17 @@ img {
     gap: 10px;
     align-items: center;
     position: relative;
+
+    .zguigui {
+        top: calc(150px + 20vw);
+        left: 70vw;
+    }
+
+    .ellipse {
+        top: calc(300px + 70vw);
+        left: calc(-150px + 50vw);
+
+    }
 }
 
 .seven {
@@ -190,9 +220,26 @@ img {
     }
 }
 
+.eight {
+    .icon {
+        position: relative;
+        left: 75vw;
+        top: -50px;
+    }
+}
+
+.nine {
+    .icon {
+        position: relative;
+        left: 75vw;
+        top: -50px;
+    }
+}
+
 .p-traveler-network {
     text-align: center;
     margin-left: -30vw;
+    margin-top: -8vw;
     .orange {
         margin-left: 40vw;
     }
@@ -205,6 +252,7 @@ img {
 
 #img3 {
     rotate: -5deg;
+    margin-left: calc(-150px + 15vw);
 }
 
 #img4 {
@@ -245,7 +293,9 @@ img {
 #img11 {
     rotate: -10deg;
     width: 90vw;
-    margin-top: 100px;
+    margin-top: 5vw;
+    margin-left: 2vw;
+    margin-bottom: 10vw;
 }
 
 </style>

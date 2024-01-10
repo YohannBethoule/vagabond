@@ -84,7 +84,7 @@ const markers = computed(() => {
 @import "@/assets/styles/variables.scss";
 .map{
     width: 100dvw;
-    height: calc(100% - $header-height);
+    height: calc(100dvh - $header-height);
 }
 
 .marker {
