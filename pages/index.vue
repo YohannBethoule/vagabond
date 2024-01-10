@@ -25,7 +25,7 @@ import IconZguigui from 'assets/icons/decoration/icon_zguigui.svg'
             <div class="three">
                 <p class="orange italic subtitle">
                     <Logo class="logo" :filled="true"/>
-                    journey accessible <span class="black">to all :</span> coming together, sharing, and traveling gently
+                    journey accessible <span class="black">to all:</span> coming together, sharing, and traveling gently
                 </p>
             </div>
             <div class="four">
