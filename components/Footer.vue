@@ -17,17 +17,7 @@ const scrollToTop = () => {
     <footer>
         <ArrowDown id="arrow-up" @click="scrollToTop"/>
         <Logo class="logo" :filled="true"/>
-        <section class="links">
-            <a href="https://www.instagram.com/vagabond_fest?igsh=OGdlcGxrOGl0Nzhu" target="_blank" rel="noopener noreferrer">
-                <InstagramIcon />
-            </a>
-            <a href="https://www.instagram.com/vagabond_fest?igsh=OGdlcGxrOGl0Nzhu" target="_blank" rel="noopener noreferrer">
-                <FacebookIcon />
-            </a>
-            <a href="https://www.instagram.com/vagabond_fest?igsh=OGdlcGxrOGl0Nzhu" target="_blank" rel="noopener noreferrer">
-                <YoutubeIcon />
-            </a>
-        </section>
+        <Socials />
         <p>
             Copyright © 2023 vagabond-fest.com All rights reserved.<br/>
             Designed by Louise Bruneau & developed by Yohann Bethoule
@@ -53,33 +43,6 @@ footer {
     width: 50px;
     height: 50px;
     transform: rotate(180deg);
-}
-
-.links {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    align-items: center;
-    height: 4rem;
-
-    a {
-        width: 70px;
-        height: 70px;
-        border: 1px solid black;
-        border-radius: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        &:hover {
-            border-width: 2px;
-        }
-
-        svg {
-            color: black;
-            width: 50px;
-            height: 50px;
-        }
-    }
 }
 
 p {

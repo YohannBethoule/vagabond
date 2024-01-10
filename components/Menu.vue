@@ -57,17 +57,7 @@ const props = defineProps<{
 
             <div class="menu-footer">
                 <Logo class="logo" :filled="true"/>
-                <section class="links">
-                    <a href="https://www.instagram.com/popillante_graphisme/" target="_blank" rel="noopener noreferrer">
-                        <InstagramIcon/>
-                    </a>
-                    <a href="https://www.facebook.com/vagabondparis" target="_blank" rel="noopener noreferrer">
-                        <FacebookIcon/>
-                    </a>
-                    <a href="https://www.behance.net/vagabondparis" target="_blank" rel="noopener noreferrer">
-                        <YoutubeIcon/>
-                    </a>
-                </section>
+                <Socials />
             </div>
 
         </aside>
@@ -177,29 +167,6 @@ li {
     .logo {
         width: 200px;
         height: 100px;
-    }
-
-    .links {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        align-items: center;
-
-        a {
-            width: 70px;
-            height: 70px;
-            border: 1px solid black;
-            border-radius: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            svg {
-                color: black;
-                width: 50px;
-                height: 50px;
-            }
-        }
     }
 }
 
